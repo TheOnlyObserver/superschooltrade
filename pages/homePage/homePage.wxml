@@ -1,0 +1,63 @@
+<view class='homePage-background'>
+  <navigator url="setting/setting">
+    <view class='homePage-personalInformation'>
+      <image src='{{headPortrait}}' mode="aspectFill"></image>
+      <view class='homePage-personalInformation-detail'>
+        <view class='username'>{{nickName}}</view>
+        <view class="tinysize">关注:{{focusamount}} 粉丝:{{fansamount}}</view>
+        <!-- <text class='tinysize'>{{userCollege}}学院</text>
+        <text class='tinysize'>{{userMajor}}  </text>
+        <text class='tinysize'>{{userGrade}}级  </text> -->
+      </view>
+    </view>
+  </navigator>
+
+  <view class='homePage-personalCenter'>
+    <view class='homePage-personalCenter-iconView-view'>
+      <navigator url="goodsList/goodsList?goodslistmode=1">
+        <view class='homePage-personalCenter-iconView'>
+          <image src='../../images/homePage_personalCenter_myGoods.png'></image>
+          <text>\n我的商品</text>
+        </view>
+      </navigator>
+      <navigator url="saveList/saveList?goodslistmode=2">
+        <view class='homePage-personalCenter-iconView'>
+          <image src='../../images/homePage_personalCenter_myCollection.png'></image>
+          <text>\n我的收藏</text>
+        </view>
+      </navigator>
+      <navigator url="myFocus/myFocus">
+        <view class='homePage-personalCenter-iconView'>
+          <image src='../../images/homePage_personalCenter_myConcern.png'></image>
+          <text>\n我的关注</text>
+        </view>
+      </navigator>
+      <navigator url="viewHistory/viewHistory">
+        <view class='homePage-personalCenter-iconView'>
+          <image src='../../images/homePage_personalCenter_browseHistory.png'></image>
+          <text>\n浏览历史</text>
+        </view>
+      </navigator>
+
+    </view>
+
+    <!-- <view class='egg1-view'>
+      <text class='egg1'>{{egg1-text}}</text>
+    </view> -->
+
+  </view>
+  <view class="newgoods_wrap">
+    <navigator style="width:640rpx;" url="addGoods/addGoods">
+      <view class='homePage-personalCenter-newGoods'>
+
+        <image src='../../images/newGoods.png'></image>
+        <text> 上 架 商 品 </text>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<!-- 游客模式 -->
+<view wx:if="{{touristmodel}}" bindtap="touristModel" style="position:fixed;top:0;width:750rpx;height:2000rpx;z-index:999;">
+  <view catchtap="outTouristModel"style=" width: 200rpx;height: 80rpx; position:fixed;bottom:20rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>
+</view>

@@ -1,0 +1,63 @@
+<!-- 商品详情——卖家信息 -->
+<navigator url="personalInformation/personalInformation?sellerid={{sellerid}}" hover-class="navigator-hover">
+  <view class='goodsDetail-top'>
+    <image mode="aspectFill" src='{{sellerimgurl}}'></image>
+    <view class='goodsDetail-top-right'>
+      <text class='goodsDetail-top-sellerName'>{{sellernickname}}</text>
+      <text class='goodsDetail-top-sellerTime'>\n{{showtime}}前发布</text>
+    </view>
+  </view>
+</navigator>
+
+<!-- 商品详情——标题 -->
+<view class="goods_head">
+  <text class='goodsDetailTitle'>{{goodstitle}} </text>
+  <!-- 商品详情——价格 -->
+  <view class='goods_price_wrap'>
+    <span style="font-size:28rpx;">¥</span>
+    <span>{{goodsprice}} \t </span>
+    <span style="font-size:28rpx;"> {{goodsifnew}}</span>
+
+  </view>
+</view>
+
+<!-- 商品详情——iftop -->
+<view wx:if="{{scrollDistance}}" class='goodsDetail-iftop'>
+  <text class='goodsDetailTitle'>{{goodstitle}}</text>
+  <view class="goods_price_wrap">
+    <span class='goodsDetail-Price' style="font-size:28rpx;">¥</span>
+    <span class='goodsDetail-Price'>{{goodsprice}}</span>
+  </view>
+</view>
+
+<!-- 商品详情——文字描述 -->
+<view class="goodscontent">{{goodscontent}} </view>
+<!-- 商品详情——商品图片 -->
+<image lazy-load='true' bindtap="reviewThisImage" data-index='{{index}}' mode="widthFix" class="goodsimages" wx:for='{{goodsimages}}' src="{{goodsimages[index]}}"></image>
+
+
+<view class="goodsDetail-bottom">
+  <view class='goodsDetail-bottom-function' bindtap="goodsLikes">
+    <image src='{{ifgoodslikesimgurl}}'></image>
+    <text class='{{ifgoodslikescolor}}'>{{goodslikes}}</text>
+  </view>
+  <view class='goodsDetail-bottom-function' bindtap="goodsSave">
+    <image src='{{ifgoodssaveimgurl}}'></image>
+    <text class='{{ifgoodssavecolor}}'>{{goodssave}}</text>
+  </view>
+  <!-- <view class='goodsDetail-bottom-function'>
+    <image src='../../../images/goodsDetail_liuyan10.png'></image>
+    <text class=''>留言</text>
+  </view> -->
+  <!-- <image src='../../../images/goodsDetail_liuyan10.png'></image> -->
+
+  <navigator url="../../communicatePage/chat/chat?chatwithid={{sellerid}}&chatwithimg={{sellerimgurl}}">
+    <button size='mini'>咨询卖家</button>
+  </navigator>
+</view>
+
+
+<!-- 游客模式 -->
+<view wx:if="{{touristmodel}}" bindtap="touristModel" style="position:fixed;top:0;width:750rpx;height:2000rpx;z-index:999;">
+  <view catchtap="outTouristModel"style=" width: 200rpx;height: 80rpx; position:fixed;bottom:120rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>
+</view>

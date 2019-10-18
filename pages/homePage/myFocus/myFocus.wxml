@@ -1,0 +1,20 @@
+<!--pages/homePage/myFocus/myFocus.wxml-->
+<view wx:if="{{!myfocusarr.length}}" class="toptext">如果不是网络延迟的话，您可能没有关注的人哦</view>
+
+
+<van-swipe-cell id="swipe-cell" right-width="{{70}}" left-width="{{0 }}" async-close bind:close="onClose" data-index="{{index}}" wx:for="{{myfocusarr.length}}">
+  <view slot="left">选择</view>
+  <!-- <van-cell-group> -->
+  <!-- <van-cell title="单元格" value="内容" /> -->
+  <navigator url="../../index/goodsDetail/personalInformation/personalInformation?sellerid={{myfocusidarr[myfocusidarr.length-1-index]}}">
+  <view class="focuslist">
+    <image mode="aspectFill" src="{{myfocusarr[index].img}}"></image>
+    <view>
+      <text>{{myfocusarr[index].nick}}</text>
+    </view>
+
+  </view>
+  </navigator>
+  <!-- </van-cell-group> -->
+  <view slot="right">取关</view>
+</van-swipe-cell>

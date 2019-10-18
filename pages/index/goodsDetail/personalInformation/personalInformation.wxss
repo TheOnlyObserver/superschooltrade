@@ -1,0 +1,312 @@
+.background_wrap {
+  margin: 0;
+  padding: 0;
+  width: 750rpx;
+  max-height: 400rpx;
+  z-index: 0;
+  overflow: hidden;
+  border: none;
+  /* border-bottom: 1rpx #f8440d solid; */
+}
+
+.background {
+  opacity: 0.7;
+  width: 850rpx;
+  height: 500rpx;
+  z-index: 0;
+  margin: 0;
+  filter: blur(10rpx);
+  position: relative;
+  left: -50rpx;
+  top: -50rpx;
+}
+
+.head_img {
+  /* border: 1rpx solid rgb(255, 68, 11); */
+  border: 2rpx solid rgba(212, 212, 212, 0.8);
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  margin: 30rpx 0 0 30rpx;
+}
+
+.head_img1 {
+  border: 2rpx solid rgba(10, 189, 227, 0.8);
+}
+
+.head_img2 {
+  border: 2rpx solid rgba(255, 27, 11, 0.8);
+}
+
+.top {
+  /* border: 1rpx solid white; *//* box-shadow: 4rpx 4rpx 8rpx 5rpx white; */
+  border-radius: 30rpx;
+  height: 400rpx;
+  width: 700rpx;
+  z-index: 1rpx;
+  position: absolute;
+  top: 0rpx;
+  margin: 0 25rpx;
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+}
+
+.persionalinfo_wrap {
+  /* border: 1rpx solid yellow; */
+  display: block;
+  width: 400rpx;
+  margin: 0 0 0 40rpx;
+  height: 200rpx;
+}
+
+.persionalinfo_wrap .nickname {
+  margin: 50rpx 0 10rpx 0;
+  color: rgb(0, 0, 0);
+}
+
+.fans {
+  /* padding-left: 30rpx; */
+  position: absolute;
+  right: 0rpx;
+  top: 70rpx;
+  min-width: 100rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  display: block;
+  float: right;
+  /* border: 1rpx solid rebeccapurple; */
+  background-color: white;
+  border-radius: 35rpx 0 0 35rpx;
+  text-align: center;
+}
+
+.fans text {
+  /* float: right;*/
+  margin: 0 10rpx;
+  color: #666;
+}
+
+.persionalsign {
+  margin-left: 25rpx;
+  width: 650rpx;
+  height: 140rpx;
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  color: #222;
+  background-color: rgba(214, 214, 214, 0.295);
+  /* display: block; */
+}
+
+.persionalsign text {
+  margin: 20rpx 5rpx 0 5rpx;
+}
+
+.goodscards_wrap {
+  width: 750rpx;
+  margin: 30rpx auto;
+  /* box-shadow: 1rpx 1rpx 5rpx 5rpx #ccc; */
+}
+
+.goodscards_wrap .toptab {
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+  /* background-color: yellow; */
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.goodscards {
+  margin: 0 auto 50rpx auto;
+  width: 700rpx;
+  height: 450rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+  background-color: red;
+  z-index: 1；;
+}
+
+.goodscards image {
+  width: 700rpx;
+  height: 450rpx;
+  z-index: 2；;
+}
+
+.goodsinfo_wrap {
+  background-color: rgba(255, 255, 255, 0.849);
+  z-index: 3;
+  position: relative;
+  top: -120rpx;
+  height: 150rpx;
+  /* bottom: 0; */
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 36rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+  position: relative;
+  bottom: -10rpx;
+}
+
+.price {
+  color: red;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+
+/* .bottom {
+  border: 0.5rpx solid gainsboro;
+  height: 1000rpx;
+  width: 650rpx;
+  margin-left: 50rpx;
+  margin-top: 30rpx;
+  background-color: ghostwhite;
+  border-radius: 10rpx;
+  color: rgb(63, 48, 150);
+  box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
+}
+
+.get_number {
+  position: absolute;
+  font-size: 60rpx;
+  margin-left: 100rpx;
+  margin-top: 20rpx;
+  color: black;
+}
+
+.buy {
+  border-bottom: 1px solid gainsboro;
+  height: 220rpx;
+}
+
+.sended {
+  font-size: 60rpx;
+  position: absolute;
+  margin-left: 420rpx;
+  margin-top: 115rpx;
+  color: black;
+}
+
+.get {
+  font-size: 60rpx;
+  position: absolute;
+  margin-left: 40rpx;
+  margin-top: 120rpx;
+  color: black;
+}
+
+.send_number {
+  position: absolute;
+  font-size: 60rpx;
+  margin-left: 490rpx;
+  margin-top: 20rpx;
+  color: black;
+}
+
+.tab {
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  padding: 10rpx 0;
+  color: gainsboro;
+}
+
+.topTabSwiper {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabBorer {
+  border-bottom: 1px solid #f00;
+  color: #f00;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper_con {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 80rpx 0;
+}
+
+.bottom {
+  position: absolute;
+  margin-left: 50rpx;
+  margin-top: 120rpx;
+} */
+
+.add_btn {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: fixed;
+  bottom: 30rpx;
+  z-index: 4;
+}
+
+.btn1 {
+  /* margin-top: 30rpx; */
+  width: 300rpx;
+  background: #14a1fd;
+  color: #fff;
+  border-radius: 45rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.btn2 {
+  /* margin-top: 30rpx; */
+  width: 300rpx;
+  background: #fff;
+  color: #14a1fd;
+  border-radius: 45rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border: 3rpx solid #14a1fd;
+}
+
+.bg_color {
+  background-color: rgb(87, 208, 248);
+}
+
+.card {
+  border: 1rpx solid #fff;
+  border-radius: 5rpx;
+  background-color: #fff;
+  box-shadow: 4rpx 1rpx 1rpx #ccc;
+  margin: 8rpx;
+  position: relative;
+  margin-top: -50rpx;
+}
+
+.image {
+  width: 100%;
+  height: 300rpx;
+  background-color: #eee;
+}
+
+.time {
+  float: right;
+  margin-top: 250rpx;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 24rpx;
+}

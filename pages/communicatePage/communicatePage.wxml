@@ -1,0 +1,33 @@
+<view wx:if="{{!communicatelist.length}}" class="toptext">
+  如果不是网络延迟的话，您可能还没有与人聊天哦</view>
+<!-- vant框架滑动单元格组件 -->
+<view wx:for="{{communicatelist.length}}">
+  <van-swipe-cell id="swipe-cell" right-width="{{ 100 }}" left-width="{{ 0 }}" data-index="{{index}}" async-close bind:close="onClose">
+    <view slot="left">选择</view>
+    <navigator url="chat/chat?chatwithid={{communicateidlist[index]}}&chatwithimg={{communicateuserinfoarr[index].img}}" hover-class="navigator-hover">
+      <van-cell-group id="{{communicateidlist[index]}}" bindtap="clearNewMessage">
+        <!-- <van-cell title="单元格" value="内容" /> -->
+        <view class="cell_wrap {{newmessageid==communicateidlist[index]?'cell_wrap_newmessage':''}}">
+          <image class="cell_image" src="{{communicateuserinfoarr[index].img}}"></image>
+          <view class="cell_text">
+            <view class="nickname">{{communicateuserinfoarr[index].nick}}</view>
+            <view class="content">
+              <view wx:if="{{communicateidlist[index]!=1000000000}}">{{communicatelist[index].data}}</view>
+              <view wx:if="{{communicateidlist[index]==1000000000}}">{{communicatelist[index].data.type==1?communicatelist[index].data.user.nick+'关注了你':''}}</view>
+            </view>
+          </view>
+          <view class="cell_roughtime">
+            <text>{{ communicatetimearr[index]}}</text>
+          </view>
+          <!-- <van-tag round type="danger" wx:if="{{0!=0?1:0}}">{{newmessagenumber[index]}}</van-tag> -->
+        </view>
+
+
+      </van-cell-group>
+    </navigator>
+    <view class="cell_right" slot="right">删除</view>
+  </van-swipe-cell>
+</view>
+<!-- 游客模式 -->
+
+<view wx:if="{{touristmodel}}" catchtap="outTouristModel" style=" width: 200rpx;height: 80rpx; position:fixed;bottom:20rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>

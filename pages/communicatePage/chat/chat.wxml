@@ -1,0 +1,65 @@
+<!-- <text>pages/communicatePage/chat/chat.wxml</text> aaa -->
+<scroll-view id="scrollview" scroll-y scroll-with-animation="true" bindscrolltoupper="upper" scroll-top="1000" class="mainbackground">
+  <view id="chatcontent" class="chatlist" wx:for='{{chatlistarr.length}}'>
+    <view class="chat_wrap_left" wx:if="{{chatlistarr[index].user == chatwithid}}">
+      <navigator url="/pages/index/goodsDetail/personalInformation/personalInformation?sellerid={{chatwithid}}">
+        <image class="chat_image" src="{{chatwithimgurl}}"></image>
+      </navigator>
+      <view class="chat_bubble">
+        <view class="chat_bubble_left" wx:if="{{chatwithid!=1000000000}}"></view>
+        <text class="chat_content" wx:if="{{chatwithid!=1000000000}}">{{chatlistarr[index].data}}</text>
+
+        <navigator url="../../index/goodsDetail/personalInformation/personalInformation?sellerid={{chatwithid}}">
+          <view class="system_card" wx:if="{{chatwithid==1000000000}}">
+            <view class="system_card_title">
+              {{chatlistarr[index].data.type==1?'新用户关注':''}}
+            </view>
+            <view class="system_card_content">
+              <image class="newfocus_img" mode="aspectFill" src="{{chatlistarr[index].data.user.img}}"></image>
+              <view class="system_card_content_nick">{{chatlistarr[index].data.user.nick}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="chat_chattime">
+        <text>{{chatlistarr[index].time}}</text>
+      </view>
+    </view>
+
+    <view class="chat_wrap_right" wx:if="{{chatlistarr[index].user ==myid}}">
+      <navigator url="/pages/index/goodsDetail/personalInformation/personalInformation?sellerid={{myid}}">
+        <image class="chat_image" src="{{myimgurl}}"></image>
+      </navigator>
+
+
+      <view class="chat_bubble">
+        <view class="chat_bubble_right"></view>
+        <text class="chat_content">{{chatlistarr[index].data}}</text>
+      </view>
+
+      <view class="chat_chattime">
+        <text>{{chatlistarr[index].time}}</text>
+
+      </view>
+
+    </view>
+  </view>
+
+</scroll-view>
+<!-- <view class="forheight"></view> -->
+<view class="input_wrap" wx:if="{{chatwithid!=1000000000}}">
+  <view wx:if="{{flase}}" class="input_icon_wrap">
+    <image class="input_icon" src="../../../images/communicatePage_chat_chooseimg.png"></image>
+    <image class="input_icon" src="../../../images/communicatePage_chat_choosegoods.png"></image>
+  </view>
+  <form>
+    <view class="chattextarea_wrap">
+      <input bindinput="textareaContentChange" maxlength="500" id="chattextarea" value="{{textareacontent}}" placeholder="我就是输入框了" placeholder-class="placeholder"></input>
+    </view>
+
+    <button bindtap="{{sendmsging?'':'sendMsg'}}">发送</button>
+  </form>
+
+
+
+</view>

@@ -1,0 +1,233 @@
+/**index.wxss**/
+page {
+    background: rgb(255,106,46);
+}
+
+.index-background {
+    background-color: rgb(240,240,240);
+}
+
+.search_wrap {
+    background-color: rgb(255,106,46);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    height: 110rpx;
+}
+
+/* .search_wrap_focus{
+  z-index: 100;
+box-shadow: 1000rpx 1000rpx 1000rpx 1000rpx #aaa;
+} */
+
+.input_wrap {
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    margin: 25rpx 0;
+    width: 100%;
+    height: 60rpx;
+}
+
+.input_placeholder {
+    font-size: 30rpx;
+}
+
+.input_wrap input {
+    box-sizing: border-box;
+    padding-left: 15rpx;
+    display: inline-block;
+    height: 100%;
+    width: 80%;
+    font-size: 30rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    line-height: 60rpx;
+}
+
+.input_wrap view {
+    display: inline-block;
+    padding: 0;
+    width: 90rpx;
+    height: 60rpx;
+    color: white;
+    line-height: 60rpx;
+    font-size: 40rpx;
+}
+
+
+/* 进入轮播图部分 */
+
+.act_ad {
+  /* background-color: rgba(240, 240, 240, 0.39); */
+  width: 100%;
+  height: 400rpx;
+  /* border:1rpx rgb(254, 255, 184) solid; *//* margin: 20rpx auto; *//* border-radius: 0 0 20rpx 20rpx; *//* border-radius: 20rpx; */
+  overflow: hidden;
+  /* z-index: -2; */
+}
+
+.swiper {
+  width: 100%;
+  height: 400rpx;
+  /* border-radius: 50rpx; */
+  margin: 0 auto;
+  /* border-radius: 20rpx; */
+}
+
+.swiper-item image {
+  width: 100%;
+  height: 400rpx;
+  /* border-radius: 50rpx; *//* border-radius: 20rpx; */
+}
+
+.wx-swiper-dots {
+  position: relative;
+  /* left: unset !important; *//* right: 0; */
+  bottom: 50rpx !important;
+}
+
+.content {
+  /* background-color: rgb(240, 240, 240); *//* border-radius: 100% 100% 0 0; */
+  position: relative;
+  top: -56.9rpx;
+}
+
+image.head_o_img {
+  width: 100%;
+}
+
+.goods-category-view {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 3% 10rpx 3%;
+  /* border: 1px solid black; *//* margin: 0rpx auto 150rpx auto; */
+  width: 94%;
+  /* height: 35rpx; */
+  background-color: rgba(240, 240, 240, 1);
+  /* position: relative; *//* top: -16rpx; *//* background-color:  *//* z-index: 99; */
+}
+
+.goods-category-view navigator {
+  width: 50px;
+}
+
+.goods-category-view navigator image {
+  width: 30px;
+  padding: 22rpx;
+  border-radius: 1000px;
+}
+
+.goods-category-view navigator text {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 0.6em;
+  position: relative;
+  top: -10rpx;
+}
+
+
+
+
+
+
+
+.maingoods_list_wrap .text {
+  text-align: center;
+}
+
+.maingoods_list {
+  width: 680rpx;
+  height: 420rpx;
+
+  margin: 50rpx auto;
+  border-radius: 30rpx;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
+  box-shadow: 1rpx 1rpx 12rpx 5rpx #ccc;
+}
+
+
+
+
+/* .helpposition {
+  height: 300rpx;
+}
+
+.mask {
+  border-bottom: 4rpx solid rgb(0, 0, 0);
+  background-size:680rpx;
+  width: 680rpx;
+  height: 180rpx;
+  background: inherit;
+  background-position: 0 -300rpx;
+  top: 500rpx;
+  filter: blur(10rpx);
+  z-index: 1;
+  border-radius:0 0 20rpx 20rpx;
+
+}
+
+.opacity {
+  width: 680rpx;
+  height: 120rpx;
+  border-top: 1rpx solid rgb(255, 255, 255);
+  background-color: white;
+  opacity: 0.7;
+  position: relative;
+  top: -180rpx;
+  border-radius:0 0 20rpx 20rpx;
+
+} */
+.main_goods_image{
+  width: 680rpx;
+  height: 420rpx;
+}
+
+.text_background{
+  width: 680rpx;
+  height: 110rpx;
+  opacity: 0.7;
+  background-color: white;
+  /* z-index: 19; */
+  position: relative;
+  top: -110rpx;
+}
+
+.text_wrap{
+  position: relative;
+  top: -215rpx;
+}
+.goods_info {
+  width: 680rpx;
+  height: 120rpx;
+  position: relative;
+  top: -300rpx;
+  border-radius:0 0 20rpx 20rpx;
+
+}
+
+.goods_title {
+  margin-left: 20rpx;
+  color: #333;
+}
+
+.goods_price_wrap {
+  /* padding: -10rpx 0 0 0 ; */
+  margin: 0rpx 0 0 20rpx;
+  font-size: 30rpx;
+  color: red;
+}
+
+.tabs_wrap {
+  width: 700rpx;
+  margin: 0 auto;
+}
+
+.van_tabs {
+ 
+}

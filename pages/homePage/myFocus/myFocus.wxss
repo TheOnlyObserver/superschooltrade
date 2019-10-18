@@ -1,0 +1,49 @@
+/* pages/homePage/myFocus/myFocus.wxss */
+.toptext {
+  color: rgb(155, 155, 155);
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.van-swipe-cell{
+  border-bottom: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
+}
+.van-swipe-cell__left, .van-swipe-cell__right {
+  padding: 90rpx 0 0 0;
+  font-size: 40rpx;
+  display: inline-block;
+  width: 140rpx;
+  /* height: 44px; */
+  /* line-height: 44px; */
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+  border: 0;
+}
+
+.focuslist {
+  display: flex;
+  width: 750rpx;
+  height: 250rpx;
+}
+
+.focuslist image {
+  margin: 25rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  border: 1rpx solid black;
+}
+
+.focuslist view {
+  margin: 90rpx 0 0 30rpx;
+  font-size: 42rpx;
+  width: 450rpx;
+  height: 70rpx;
+  /* background-color: yellow; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}

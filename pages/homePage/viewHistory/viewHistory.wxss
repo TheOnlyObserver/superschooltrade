@@ -1,0 +1,85 @@
+/* pages/homePage/viewHistory/viewHistory.wxss */
+
+/* vant框架滑动单元格组件 */
+
+/* .van-swipe-cell__left, .van-swipe-cell__right {
+  padding: 320rpx 0 0 0;
+  font-size: 40rpx;
+  display: inline-block;
+  width: 200rpx;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+  border: 0;
+} */
+
+.toptext {
+  color: rgb(155, 155, 155);
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.goods_list {
+  display: flex;
+  width: 100%;
+  height: 250rpx;
+  /* background-color: yellowgreen; */
+  border-top: 1rpx solid #eee;
+  flex-wrap: wrap;
+}
+
+navigator {
+  /* background-color: rebeccapurple; */
+  display: flex;
+}
+
+.goods_list image {
+  border-radius: 20rpx;
+  margin: 20rpx 0 20rpx 20rpx;
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.goods_list .goods_info {
+  width: 500rpx;
+  height: 240rpx;
+  /* background: yellow; */
+}
+
+.goods_title {
+  margin: 30rpx 0 0 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.goods_price_wrap {
+  font-size: 34rpx;
+  color: #ff351b;
+  margin: 0 0 0 30rpx;
+}
+
+.likeamount {
+  margin: 70rpx 0 0 30rpx;
+  color: rgb(155, 155, 155);
+  font-size: 26rpx;
+}
+
+.ifon {
+  text-align: center;
+  z-index: 3;
+  background-color: rgba(194, 194, 194, 0.658);
+  width: 750rpx;
+  height: 250rpx;
+  font-size: 50rpx;
+  display: block;
+  position: relative;
+  top: -250rpx;
+}
+
+.ifon text {
+  position: relative;
+  top: 70rpx;
+}

@@ -1,0 +1,69 @@
+<!-- 分类筛选 -->
+<view class="search_wrap .search_wrap_focus">
+    <view class="input_wrap">
+      <input placeholder="你想要的都在这" placeholderClass="input_placeholder" bindinput="getInput" value="{{lastsearchcontent}}"></input>
+    
+        <view bindtap="search">搜索</view>
+    </view>
+  </view>
+
+   <van-tabs sticky swipeable animated="true" bind:change="vanTabsChange" bind:scroll="vanTabsScroll" border="false" navClass="van_tabs">
+      <van-tab title="商品">
+        <view class="goods_list_wrap">
+  <view class="goods_list" wx:for="{{goodslist}}">
+    <navigator url="../goodsDetail/goodsDetail?goodsid={{goodslist[index].id}}&sellerid={{goodslist[index].userid}}">
+      <image mode="aspectFill" class="goods_image" src="{{goodslist[index].indeximg}}"></image>
+      <!-- <text>地址：{{goodslist[index].intro[0]}}</text> -->
+      <view class="goods_detail">
+        <view class="goods_title">{{goodslist[index].title}}</view>
+        <view class="goods_price">
+          <span style="font-size:20rpx;">¥</span>
+          <span>{{goodslist[index].price}}</span>
+        </view>
+        <text class="likeamount">点赞:{{goodslist[index].likes}}  收藏:{{goodslist[index].save}}  浏览:{{goodslist[index].view}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>
+      </van-tab>
+      <van-tab title="用户">
+       <view class="goods_list_wrap">
+  <view class="goods_list" wx:for="{{sellerarr.length}}">
+    <navigator url="../goodsDetail/personalInformation/personalInformation?sellerid={{sellerarr[index].id}}">
+      <image mode="aspectFill" class="goods_image" src="{{sellerarr[index].img}}"></image>
+      <!-- <text>地址：{{goodslist[index].intro[0]}}</text> -->
+      <view class="goods_detail">
+        <view class="goods_title">{{sellerarr[index].nick}}</view>
+        <!-- <view class="goods_price">
+          <span style="font-size:20rpx;">¥</span>
+          <span>{{goodslist[index].price}}</span>
+        </view> -->
+        <text class="likeamount">{{sellerarr[index].sign}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>
+      </van-tab>
+    </van-tabs>
+
+
+<!-- <view class="goods_list_wrap">
+  <view class="goods_list" wx:for="{{goodslist}}">
+    <navigator url="../goodsDetail/goodsDetail?goodsid={{goodslist[index].id}}&sellerid={{goodslist[index].userid}}">
+      <image mode="aspectFill" class="goods_image" src="{{goodslist[index].indeximg}}"></image>
+      
+      <view class="goods_detail">
+        <text class="goods_title">{{goodslist[index].title}}</text>
+        <view class="goods_price">
+          <span style="font-size:20rpx;">¥</span>
+          <span>{{goodslist[index].price}}</span>
+        </view>
+        <text class="likeamount">点赞:{{goodslist[index].likes}}  收藏:{{goodslist[index].save}}  浏览:{{goodslist[index].view}}</text>
+      </view>
+    </navigator>
+  </view>
+</view> -->
+
+<!-- 游客模式 -->
+
+  <view wx:if="{{touristmodel}}" catchtap="outTouristModel" style=" width: 200rpx;height: 80rpx; position:fixed;bottom:20rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>

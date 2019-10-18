@@ -1,0 +1,225 @@
+/* pages/communicatePage/chat.wxss */
+
+page {
+  background-color: rgba(232, 234, 235, 0.507);
+}
+
+/* 以下为聊天内容区 */
+.mainbackground{
+  float: left;
+  padding: 0 0 170rpx 0;
+  /* margin: 0 0 170rpx 0; */
+  height:100%;
+}
+.chat_wrap_left, .chat_wrap_right {
+  /* border: 1px 0 1rpx 0 solid rebeccapurple; */
+  width: 750rpx;
+  float: left;
+  margin: 20rpx 0;
+}
+
+.chat_wrap_left .chat_image {
+  width: 80rpx;
+  height: 80rpx;
+  /* border: 1px solid green; */
+  border-radius: 40rpx;
+  float: left;
+  margin: 10rpx;
+}
+
+.chat_wrap_left .chat_bubble {
+  float: left;
+}
+
+.chat_wrap_left .chat_content {
+  display: flex;
+}
+
+.chat_wrap_left .chat_chattime {
+  float: right;
+}
+
+.chat_wrap_right .chat_image {
+  margin: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  /* border: 1px solid green; */
+  border-radius: 40rpx;
+  float: right;
+}
+
+.chat_wrap_right .chat_bubble {
+  float: right;
+}
+
+.chat_wrap_right .chat_content {
+  display: flex;
+}
+
+/* .chat_wrap_right .chat_content */
+
+.chat_bubble_left {
+  position: absolute;
+  left: 115rpx;
+  width: 0;
+  height: 0;
+  border-top: 15rpx solid transparent;
+  border-right: 20rpx solid white;
+  border-bottom: 15rpx solid transparent;
+}
+.chat_bubble_right {
+  position: absolute;
+  right: 115rpx;
+  width: 0;
+  height: 0;
+  border-top: 15rpx solid transparent;
+  border-left: 20rpx solid white;
+  border-bottom: 15rpx solid transparent;
+}
+
+.chat_wrap_right .chat_chattime {
+  float: left;
+}
+
+.chat_bubble {
+  max-width: 400rpx;
+  margin: auto 30rpx;
+  /* border:1px solid red; */
+  padding: 20rpx 20rpx 20rpx 20rpx;
+  background-color: white;
+  border-radius: 30rpx;
+}
+
+.chat_content {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: rgb(19, 19, 19);
+  max-width: 400rpx;
+}
+
+.chat_chattime {
+  font-size: 20rpx;
+  color: rgb(221, 221, 221);
+}
+
+/* .forheight{
+  float: left;
+  width: 700rpx;
+  height: 170rpx;
+} */
+/* 以下为输入框区 */
+
+
+
+.input_wrap {
+  /* border: 1px solid red; */
+  background-color: rgb(231, 231, 231);
+  position: fixed;
+  bottom: 0rpx;
+  width: 750rpx;
+  /* margin: 50rpx 0 0 0; */
+}
+
+.chattextarea_wrap{
+  width: 560rpx;
+  min-height: 80rpx;
+  max-height: 200rpx;
+  position: static;
+  float: left;
+  border-radius: 40rpx;
+  overflow: hidden;
+ padding: 0 ;
+ margin: 0 0 15rpx 0;
+}
+
+.chattextarea_wrap input{
+  padding:0 15rpx 0 15rpx;
+  margin: 10rpx 0 10rpx 20rpx;
+  width: 500rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+
+  line-height: 32rpx;
+  background-color: white;
+  font-size: 32rpx;
+
+}
+
+ /* .placeholder{
+  position: relative;
+  top: -22rpx;
+ } */
+
+.chatinput {
+  position: static;
+  margin: 10rpx 0 10rpx 10rpx;
+  /* border: 1px solid black; */
+  border-radius: 40rpx;
+  float: left;
+  width: 560rpx;
+  font-size: 44rpx;
+  height: 80rpx;
+  background-color: white;
+  padding: 0rpx 0  0rpx 0rpx ;
+  /* height: 80rpx; */
+}
+
+
+
+
+.input_wrap button {
+  margin: 10rpx 25rpx 10rpx 0rpx;
+  width: 150rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  float: right;
+border-radius: 40rpx;
+background-color: rgb(86, 207, 255);
+color: white;
+}
+
+.input_wrap button::after {
+border-radius: 80rpx;
+border: none;
+}
+
+.input_icon_wrap{
+  width: 750rpx;
+  height: 70rpx;
+  float: left;
+  background-color: rgb(235, 235, 235); 
+}
+
+.input_wrap .input_icon{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  margin: 10rpx 0 0 30rpx; 
+}
+
+.system_card{
+  width: 300rpx;
+}
+.system_card_title{
+  text-align: center;
+  padding: 0 0 20rpx 0;
+  font-size: 26rpx;
+  color: #333;
+  border-bottom: 1rpx solid #aaa;
+}
+
+.system_card_content{
+  display: flex;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.newfocus_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.system_card_content_nick{
+  margin: 30rpx 0 0 0;
+}

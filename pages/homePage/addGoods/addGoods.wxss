@@ -1,0 +1,229 @@
+page {
+  background-color: rgb(227, 227, 231);
+  /* background: -webkit-linear-gradient(-60deg, rgb(255, 233, 172), rgba(255, 251, 195, 0.796)); */
+  width: 100%;
+  /* height: 1300rpx; *//* background-color: yellow; */
+}
+
+.intro {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.goods-title-wrap {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-bottom: 1px #999 solid; */
+  width: 90%;
+  padding: 0 5%;
+  /* height: 100rpx; */
+}
+
+.goods_title {
+  width: 88%;
+  padding: 20rpx 0;
+}
+
+.input-counter {
+  width: 12%;
+  line-height: 100%;
+  color: rgb(219, 208, 203);
+  text-align: right;
+}
+
+.goods_content_wrap {
+  display: flex;
+  background-color: white;
+  /* align-content: space-between; */
+  flex-direction: column;
+  justify-content: space-between;
+  /* border-bottom: 1px #999 solid; */
+  width: 90%;
+  padding: 0 5%;
+  min-height: 500rpx;
+}
+
+.goods_content_wrap view, textarea.goods_content {
+  width: 100%;
+}
+
+.goods_content {
+  width: 100%;
+  z-index: 1;
+  padding: 20rpx 0;
+  /* height: 200rpx; */
+  /* background-color: yellow; */
+}
+
+.goods_content_wrap view view.input-counter {
+  height: auto;
+  text-align: right;
+  color: rgb(212, 201, 197);
+}
+
+.video-container {
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.video-container view.video-item, .video-container view.se {
+  width: 18% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+  margin-right: 2.5%;
+}
+
+.video-container view.se {
+  height: 120rpx;
+  text-align: center;
+  margin-right: 0;
+  background-color: rgb(255, 91, 41);
+  color: white;
+  border-radius: 10px;
+  line-height: 40rpx;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx;
+  z-index: 2;
+}
+
+.video-container view.video-item:nth-child(5n) {
+  margin-right: 0;
+}
+
+.video-img {
+  width: 100%;
+  height: 120rpx;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.video-img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.price_wrap {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-bottom: 1px #999 solid; */
+  width: 90%;
+  padding: 0 5%;
+  /* height: 100rpx; */
+}
+
+.price_wrap input {
+  padding: 25rpx 0;
+  color: rgb(22, 22, 22);
+  width: 100%;
+}
+
+.ifnew_wrap {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-bottom: 1px #999 solid; */
+  width: 90%;
+  padding: 0 5%;
+  /* height: 100rpx; */
+}
+
+.ifnew_wrap view.section {
+  padding: 25rpx 0;
+  color: rgb(22, 22, 22);
+  width: 100%;
+}
+
+.ifnew_wrap .picker{
+  width: 100%;
+}
+
+.classification_wrap {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-bottom: 1px #999 solid; */
+  width: 90%;
+  padding: 0 5%;
+  /* height: 100rpx; */
+}
+
+.classification_wrap picker {
+  padding: 25rpx 0;
+  color: rgb(22, 22, 22);
+  width: 100%;
+}
+
+.gogo {
+  margin: 20rpx auto;
+  height: 130rpx;
+  width: 100%;
+  background-color: rgb(250, 79, 67);
+  color: white;
+  line-height: 130rpx;
+  border: none;
+  border-radius: 20rpx;
+}
+
+.adding_goods_mask {
+  position: fixed;
+  top: 0;
+  width: 750rpx;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.658);
+  z-index: 5;
+}
+
+.adding_goods {
+  margin: 250rpx auto;
+  padding: 100rpx 0 0 0;
+  opacity: 1;
+  width: 500rpx;
+  height: 500rpx;
+  background-color: white;
+  z-index: 6;
+  border-radius: 20rpx;
+}
+
+.adding_goods text {
+  display: block;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.adding_goods_success {
+  padding: 0 0 0 0;
+  text-align: center;
+  background-color: rgb(255, 91, 41);
+  width: 450rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  color: white;
+  margin: 200rpx auto 0 auto;
+}
+
+/* .myCanvas{
+  border: 2rpx solid red;
+  margin: 0;
+  padding: 0;
+} */
+.myCanvas{
+  position: fixed;
+  z-index: -99;
+  top: 2000rpx;
+  right: 4000rpx;
+  opacity: 0;
+}

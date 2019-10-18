@@ -1,0 +1,130 @@
+<!-- //一个大表单 -->
+
+<!-- 输入标题区域  -->
+<view style='background-color: white; border-radius:0 0 20rpx 20rpx; overflow:hidden'>
+  <view class="goods-title-wrap">
+    <!-- 标题输入框 -->
+    <textarea class="goods_title" placeholder="标题 品类品牌型号" maxlength="20" placeholder-style="color:#b3b3b3; " auto-height='true' bindinput="handleTitleInput"></textarea>
+    <!-- 标题输入字数统计 -->
+    <view class="input-counter">{{titleCount}}/20</view>
+  </view>
+
+  <view style='height:1px;width: 90%; margin: 0 5%;background-color: #999;'></view>
+
+  <view class="goods_content_wrap">
+    <!--商品详情正文输入框 -->
+    <view style='min-height: 300rpx;' bindtap='forceInput'>
+      <textarea class="goods_content" placeholder="商品详情" maxlength="500" placeholder-style="color:#b3b3b3;" bindinput="handleContentInput" auto-height='true' focus='{{forceInputValue}}'></textarea>
+    </view>
+    
+    <!-- 商品详情输入字数统计 -->
+    <view>
+      <view class="input-counter">{{contentCount}}/500</view>
+
+      <view class='video-container'>
+        <view class='video-item' wx:for="{{tempfilepaths}}" wx:key="idx">
+          <view class='video-img'>
+            <image src='{{tempfilepaths[index]}}' mode='aspectFill' bindtouchstart="handleTouchStart"  bindtouchend="handleTouchEnd" bindtap='previewImg' bindlongpress='delImg' data-index='{{index}}'></image>
+          </view>
+        </view>
+        <view class='se' bindtap="rechooseImages" style='background-color:{{tempfilepaths.length<=8?"rgb(255, 91, 41)":"#999"}};'>选择\r图片</view>
+      </view>
+
+      <!-- <view class="showgoodsimages">
+
+        <view></view>
+        <image wx:for='{{tempfilepaths}}' src="{{tempfilepaths[index]}}"></image>
+        <view class="rechooseimages" bindtap="rechooseImages">重新选择</view>
+      
+      </view> -->
+
+    </view>
+
+  </view>
+</view>
+<canvas canvas-id='photo_canvas' style='width:500px;height:{{canvas_h}}px' class='myCanvas'></canvas>
+
+
+
+
+
+
+
+<view style='text-align: center; color: #999; font-size:.8em; padding-top:8rpx'>小贴士：长按图片可以删除哦</view>
+
+
+
+
+<view style='background-color: white; border-radius:20rpx;'>
+
+  <view class='intro'>商品参数</view>
+  <view style='height:2px;width: 90%; margin: 0 5%;background-color: #999;'></view>
+
+  <!-- 以下为价格、新旧等 -->
+  <view class="price_wrap">
+    <input bindinput="inputedit" adjust-position="true" value="{{moneyNum}}" type="digit" class="price" placeholder="价格…" maxlength="8"></input>
+  </view>
+
+  <view style='height:1px;width: 90%; margin: 0 5%;background-color: #ccc;'></view>
+
+  <view class="ifnew_wrap">
+    <view class="section">
+      <picker bindchange="ifnewBindPickerChange" value="{{ifnewindex}}" range="{{ifnewarray}}">
+        <view class="picker">
+          品质：{{ifnewarray[ifnewindex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view style='height:1px;width: 90%; margin: 0 5%;background-color: #ccc;'></view>
+
+
+  <view class='classification_wrap'>
+    <picker bindchange="classification1BindPickerChange" value="{{classification1index}}" range="{{classification1array}}">
+      <view class="picker">
+        主分类：{{classification1array[classification1index]}}
+      </view>
+    </picker>
+  </view>
+
+
+  <view style='height:1px;width: 90%; margin: 0 5%;background-color: #ccc;'></view>
+
+
+  <view class='classification_wrap'>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel="bindMultiPickerColumnCancel">
+      <view class="picker">
+        副分类：{{multiArray[0][multiIndex[0]]}}-->{{multiArray[1][multiIndex[1]]}}
+      </view>
+    </picker>
+  </view>
+  <view style='height:20rpx;'></view>
+</view>
+
+<!-- <image style="width:400rpx;height:800rpx;" src="{{testimg}}"></image> -->
+
+
+
+<button class='gogo' form-type="submit" bindtap='addGoods'>确认发布</button>
+
+
+<!-- <view class="adding_goods" wx:if="{{addinggoodsnow}}"> -->
+<view class="adding_goods_mask" wx:if="{{addinggoodsnow}}">
+  <view class="adding_goods" wx:if="{{addinggoodsnow}}">
+    <text>商品数据已上传</text>
+    <!-- <text>图片上传{{overimgamount}}/{{tempfilepaths.length}}</text> -->
+    <navigator open-type="navigateBack" >
+      <!-- <view wx:if="{{addinggoodssuccess}}" class="adding_goods_success"> -->
+
+
+      <view wx:if="{{addinggoodssuccess}}" class="adding_goods_success">
+
+        <text>上传成功</text>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<!-- <canvas canvas-id='attendCanvasId' style='width:{{canvas_w}}px;height:{{canvas_h}}px' class='myCanvas'></canvas> -->
+

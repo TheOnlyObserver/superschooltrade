@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/homePage/login/login",
+    "pages/index/index",
+    "pages/index/actadPage/actadPage",
+    "pages/index/classifiedGoodsList/classifiedGoodsList",
+    "pages/index/goodsDetail/goodsDetail",
+    "pages/index/searchPage/searchPage",
+    "pages/index/goodsDetail/personalInformation/personalInformation",
+    "pages/communicatePage/communicatePage",
+    "pages/communicatePage/chat/chat",
+    "pages/homePage/homePage",
+    "pages/homePage/setting/setting",
+    "pages/homePage/addGoods/addGoods",
+    "pages/homePage/goodsList/goodsList",
+    "pages/homePage/saveList/saveList",
+    "pages/homePage/myFocus/myFocus",
+    "pages/homePage/viewHistory/viewHistory",
+    "pages/logs/logs"
+    
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBarIcon10.png",
+        "selectedIconPath": "images/tabBarIcon11.png",
+        "text": "商品"
+      },
+      {
+        "pagePath": "pages/communicatePage/communicatePage",
+        "iconPath": "images/tabBarIcon20.png",
+        "selectedIconPath": "images/tabBarIcon21.png",
+        "text": "聊天"
+      },
+      {
+        "pagePath": "pages/homePage/homePage",
+        "iconPath": "images/tabBarIcon30.png",
+        "selectedIconPath": "images/tabBarIcon31.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "超级校园交易",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

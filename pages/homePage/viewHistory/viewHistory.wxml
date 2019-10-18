@@ -1,0 +1,35 @@
+<!--pages/homePage/viewHistory/viewHistory.wxml-->
+
+<view class="toptext">仅显示最近浏览3个月内的100件商品</view>
+<!-- 
+<van-swipe-cell wx:for="{{viewhistoryarr}}" id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">
+  <view slot="left">选择</view>
+  <van-cell-group>
+    <van-cell title="单元格" value="内容" />
+    <view></view>
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell> -->
+
+<view class="goods_list" wx:for="{{viewhistoryarr.length}}">
+  <navigator url="../../index/goodsDetail/goodsDetail?goodsid={{viewhistoryidarr[viewhistoryidarr.length-1-index]}}&sellerid={{viewhistoryarr[index].userid}}">
+    <image lazy-load="true" mode="aspectFill" src="{{viewhistoryarr[index].indeximg}}"></image>
+    <view class="goods_info">
+      <view class="goods_title">{{viewhistoryarr[index].title}}</view>
+      <view class="goods_price_wrap">
+        <span style="font-size:26rpx;">¥</span>
+        <span>{{viewhistoryarr[index].price}}</span>
+
+        <span style="font-size:26rpx;"> {{goodsifnew[index]}}</span>
+
+      </view>
+      <view class="likeamount">
+        点赞:{{viewhistoryarr[index].likes}} 收藏:{{viewhistoryarr[index].save}} 浏览:{{viewhistoryarr[index].view}}
+      </view>
+    </view>
+  </navigator>
+  <!-- <view class="seller_info "> 
+  
+  </view> -->
+  <view wx:if ="{{!viewhistoryarr[index].title}}" class="ifon"><text>商品已下架</text> </view>
+</view>

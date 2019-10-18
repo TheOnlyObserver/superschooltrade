@@ -1,0 +1,28 @@
+<!--pages/homePage/setting/setting.wxml-->
+<!-- <text>pages/homePage/setting/setting.wxml</text> -->
+<image bindtap="imgUpdata" src="{{imgurl}}" mode="aspectFill"></image>
+
+
+<!-- <form bindsubmit="formSubmit" bindreset="formReset"> -->
+<view class="input_wrap">
+
+  <input value="{{nickName}}" maxlength="16" bindblur='nickNameUpdata'></input>
+</view>
+<radio-group class="radio-group" bindchange="genderUpdata">
+
+  <radio name='gender' color="rgb(255, 159, 243)" value="2" checked="{{gender==2}}" />女
+  <radio name='gender' color="rgb(72, 219, 251)" value="1" checked="{{gender==1}}" />男
+  <radio name='gender' color="gray" value="3" checked="{{gender==3}}" />不公开
+
+</radio-group>
+<!-- <button form-type="submit">保存</button> -->
+<!-- </form> -->
+<view class="persionalsign">
+  <textarea value="{{persionalSign}}" placeholder="个人签名" maxlength="50" bindinput="textArea" bindblur='persionalSignUpdata'></textarea>
+</view>
+
+
+
+<button type="warn" bindtap="logout">退出当前账号</button>
+
+<canvas canvas-id='photo_canvas' style='width:250px;height:{{canvas_h}}px' class='myCanvas'></canvas>

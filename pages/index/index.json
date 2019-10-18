@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search": "../../miniprogram_npm/vant-weapp/dist/search/index",
+    "van-notify": "../../miniprogram_npm/vant-weapp/dist/notify/index",
+    "van-toast": "../../miniprogram_npm/vant-weapp/dist/toast/index",
+      "van-tab": "../../miniprogram_npm/vant-weapp/dist/tab/index",
+      "van-tabs": "../../miniprogram_npm/vant-weapp/dist/tabs/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,38 @@
+<!--pages/homePage/saveList/saveList.wxml-->
+
+
+<view wx:if="{{!goodslistarr.length}}" class="toptext">如果不是网络延迟的话，您可能没有收藏商品哦</view>
+<!-- vant框架滑动单元格组件 -->
+
+<van-swipe-cell wx:for="{{goodslistarr.length}}" id="swipe-cell" right-width="{{ 100 }}" left-width="{{ 0 }}" async-close bind:close="onClose" data-index="{{index}}" style="touch-action: none;">
+  <view slot="left">选择</view>
+  <view class="goods_list">
+    <navigator url="/pages/index/goodsDetail/goodsDetail?goodsid={{goodslistidarr[goodslistidarr.length-1-index]}}&sellerid={{goodslistarr[index].userid}}" hover-class="navigator-hover">
+      <van-cell-group>
+        <!-- <van-cell title="单元格" value="内容" /> -->
+        <view class="goods_card">
+          <image mode="aspectFill" lazy-load="true" class="cell_image" src="{{goodslistarr[index].indeximg}}"></image>
+          <view class="cell_text">
+            <view class="goods_title">{{goodslistarr[index].title}}</view>
+
+            <view class="goods_price_wrap">
+              <span style="font-size:24rpx;">¥</span>
+              <span>{{goodslistarr[index].price}}</span>
+            </view>
+            <text class="goods_likeamount">{{goodslistarr[index].likes}}点赞 {{goodslistarr[index].save}}收藏 {{goodslistarr[index].view}}浏览</text>
+          </view>
+
+        </view>
+        <view class="ifon" wx:if="{{!goodslistarr[index].title}}">
+          <text>商品已下架</text>
+        </view>
+
+      </van-cell-group>
+    </navigator>
+    <text class="timearea">{{goodslistmode}}{{goodsaddtimearr[index]}}</text>
+  </view>
+  <view class="cell_right" slot="right">取消收藏</view>
+
+</van-swipe-cell>
+
+<!-- <navigator url="chat/chat" hover-class="navigator-hover">aaa</navigator> -->

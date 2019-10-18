@@ -1,0 +1,66 @@
+.toptext {
+  color: rgb(155, 155, 155);
+  text-align: center;
+  font-size: 28rpx;
+}
+
+/* vant框架滑动单元格组件 */
+
+.van-swipe-cell__left, .van-swipe-cell__right {
+  padding: 30rpx 0 0 0;
+  font-size: 40rpx;
+  display: inline-block;
+  width: 200rpx;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+  border: 0;
+}
+
+.cell_wrap {
+  display: flex;
+  border-bottom: 1rpx solid rgb(235, 235, 235);
+}
+
+.cell_wrap_newmessage {
+  box-sizing: border-box;
+  border:2rpx solid rgb(255, 77, 32);
+}
+
+.cell_image {
+  flex-shrink: 0;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  /* border: 1px solid black; */
+  border-radius: 60rpx;
+}
+
+.cell_wrap .cell_text {
+  /* border: 1px solid bisque; */
+  width: 450rpx;
+}
+
+.cell_wrap .cell_text {
+}
+
+.cell_wrap .cell_text .nickname {
+  display: block;
+  margin: 10rpx 0 0 0;
+}
+
+.cell_wrap .cell_text .content {
+  display: block;
+  margin: 20rpx 0 0 0;
+  font-size: 30rpx;
+  color: rgb(170, 170, 170);
+}
+
+.cell_wrap .cell_roughtime {
+  padding: 10rpx 20rpx 0 60rpx;
+  font-size: 20rpx;
+  color: rgb(170, 170, 170);
+  /* border: 1px red solid; */
+}

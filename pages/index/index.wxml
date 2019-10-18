@@ -1,0 +1,186 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<!-- 以上为小程序初始自带代码 -->
+<van-toast id="van-toast" />
+<view class='index-background'>
+  <!-- <view class="topbackground"></view> -->
+
+  <!-- <van-search custom-class="search_wrap" value="{{searchValue}}" input-class="search_input" field-class="search_field" placeholder="你想要的都在这里" use-action-slot bind:search="onSearch">
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search> -->
+  <view class="search_wrap">
+    <view class="input_wrap">
+      <input placeholder="你想要的都在这" placeholder-class="input_placeholder" bindinput="getInput"></input>
+      <navigator url="searchPage/searchPage?searchcontent={{inputcontent?inputcontent:'0'}}">
+        <view bindtap="search">搜索</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 活动和广告大轮播图 -->
+
+  <view class="act_ad">
+    <swiper indicator-dots="true" autoplay="true" circular="true" interval="6000" duration="600" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" indicator-color="rgba(236, 240, 241,1.0)" indicator-active-color="rgba(255, 56, 56,1.0)"
+      class="swiper">
+      <block wx:for="{{act_ad_imgArr}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{item}}">
+            <navigator url="actadPage/actadPage">
+              <image mode="aspectFill" src="{{item}}"></image>
+            </navigator>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{act_ad_imgArr}}" wx:key="a">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+  <van-notify id="custom-selector" />
+
+
+
+
+
+
+
+  <view class="content">
+    <image class='head_o_img' src="../../images/b.svg" mode='widthFix'></image>
+    <view class='goods-category-view'>
+      <navigator url="classifiedGoodsList/classifiedGoodsList?id=1" hover-class="navigator-hover">
+        <!-- <view class="goods_category_wrap category1" style="background-color:rgb(99, 144, 196);"> -->
+        <image class='goods-category' src="../../images/goodscategory1.png" mode='widthFix' style="background-color:rgb(246, 63, 31);"> </image>
+
+        <!-- </view> -->
+        <text class="goods_category_text">数码3C</text>
+
+
+      </navigator>
+      <navigator url="classifiedGoodsList/classifiedGoodsList?id=2" hover-class="navigator-hover">
+        <!-- <view class="goods_category_wrap category2" style="background-color:rgba(255, 159, 26,1.0);"> -->
+        <image class='goods-category' src="../../images/goodscategory2.png" mode='widthFix' style="background-color:rgb(241, 133, 33);"></image>
+        <!-- </view> -->
+        <text class="goods_category_text">生活洗护</text>
+
+      </navigator>
+
+      <navigator url="classifiedGoodsList/classifiedGoodsList?id=3" hover-class="navigator-hover">
+        <!-- <view class="goods_category_wrap category3" style="background-color:rgb(65, 184, 148);"> -->
+        <image class='goods-category' src="../../images/goodscategory3.png" mode='widthFix' style="background-color:rgb(32, 204, 164);"></image>
+        <!-- </view> -->
+        <text class="goods_category_text">学习文创</text>
+
+      </navigator>
+      <navigator url="classifiedGoodsList/classifiedGoodsList?id=4" hover-class="navigator-hover">
+        <!-- <view class="goods_category_wrap category4" style="background-color:rgb(143, 111, 82);"> -->
+        <image class='goods-category' src="../../images/goodscategory4.png" mode='widthFix' style="background-color:rgb(162, 106, 79);"></image>
+        <!-- </view> -->
+        <text class="goods_category_text">专业器具</text>
+
+      </navigator>
+      <navigator url="classifiedGoodsList/classifiedGoodsList?id=5" hover-class="navigator-hover">
+        <!-- <view class="goods_category_wrap category4" style="background-color:rgb(143, 111, 82);"> -->
+        <image class='goods-category' src="../../images/goodscategory5.png" mode='widthFix' style="background-color:rgb(255, 126, 105);"></image>
+        <!-- </view> -->
+        <text class="goods_category_text">其他服务</text>
+
+      </navigator>
+    </view>
+
+    <!-- <view class="tabs_wrap"> -->
+    <van-tabs swipeable sticky animated="true" border="false" nav-class="van_tabs" bind:scroll="vanTabsScroll">
+      <van-tab title="最新">
+        <view class="maingoods_list_wrap">
+          <!-- <view class="text">最新上架</view> -->
+          <navigator url="goodsDetail/goodsDetail?goodsid={{latestidarr[index]}}&sellerid={{latestarr[index].userid}}" wx:for="{{latestarr.length}}">
+            <view class="maingoods_list">
+              <image mode='aspectFill' class="main_goods_image" src="{{latestarr[index].indeximg}}"> </image>
+              <view class="text_background">
+              </view>
+              <view class="text_wrap">
+                <view class="goods_title">
+                  <text>{{latestarr[index].title}}</text>
+                </view>
+                <view class='goods_price_wrap'>
+                  <span style="font-size:28rpx;">¥</span>
+                  <span>{{latestarr[index].price}} </span>
+                  <span style="font-size:24rpx;"> {{latestarr[index].new==100?'全新':latestarr[index].new==99?'99新':latestarr[index].new==95?'95新':latestarr[index].new==90?'9成新':latestarr[index].new==80?'8成新':latestarr[index].new==70?'七成新':latestarr[index].new==50?'5成新':latestarr[index].new==40?'能用':latestarr[index].new==10?'不能用':''}}</span>
+
+                </view>
+              </view>
+
+            </view>
+          </navigator>
+        </view>
+      </van-tab>
+      <van-tab title="最热">
+
+        <view class="maingoods_list_wrap">
+          <navigator url="goodsDetail/goodsDetail?goodsid={{hottestidarr[index]}}&sellerid={{hottestarr[index].userid}}" wx:for="{{hottestarr.length}}">
+            <view class="maingoods_list">
+              <image mode='aspectFill' class="main_goods_image" src="{{hottestarr[index].indeximg}}"> </image>
+              <view class="text_background">
+              </view>
+              <view class="text_wrap">
+                <view class="goods_title">
+                  <text>{{hottestarr[index].title}}</text>
+                </view>
+                <view class='goods_price_wrap'>
+                  <span style="font-size:28rpx;">¥</span>
+                  <span>{{hottestarr[index].price}} </span>
+
+                  <span style="font-size:24rpx;"> {{hottestarr[index].new==100?'全新':hottestarr[index].new==99?'99新':hottestarr[index].new==95?'95新':hottestarr[index].new==90?'9成新':hottestarr[index].new==80?'8成新':hottestarr[index].new==70?'七成新':hottestarr[index].new==50?'5成新':hottestarr[index].new==40?'能用':hottestarr[index].new==10?'不能用':''}}</span>
+                </view>
+              </view>
+
+            </view>
+          </navigator>
+        </view>
+      </van-tab>
+    </van-tabs>
+
+    <!-- </view> -->
+
+
+
+
+
+
+    <!-- <view class="main_goods_item_wrap">
+      <view class="main_goods_item" wx:for="{{mainGoodsList}}">
+        <navigator url="goodsDetail/goodsDetail" hover-class="navigator-hover">
+          <view class='main_goods_wrap'>
+            <image mode='aspectFill' class="main_goods_image" src="{{item.pic}}"> </image>
+            <view class='main_goods_detail'>
+              <view class="goods_title">{{item.title}}</view>
+              <view class="price">
+                <span style="font-size:24rpx;">¥</span>
+                {{item.price}}
+              </view>
+              <view class="likeamount">
+                收藏:1 点赞:2 浏览:10
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view> -->
+
+
+  </view>
+</view>
+
+<!-- 游客模式 -->
+<view wx:if="{{touristmodel}}" catchtap="outTouristModel" style=" width: 200rpx;height: 80rpx; position:fixed;bottom:20rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>

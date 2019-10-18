@@ -1,0 +1,77 @@
+/* pages/homePage/goodsList/goodsList.wxss */
+.toptext {
+  color: rgb(155, 155, 155);
+  text-align: center;
+  font-size: 28rpx;
+}
+/* vant框架滑动单元格组件 */
+
+.van-swipe-cell__left, .van-swipe-cell__right {
+  padding: 370rpx 0 0 0;
+  font-size: 40rpx;
+  display: inline-block;
+  width: 200rpx;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+  border: 0;
+  
+}
+
+.goods_list {
+  border-top: 1rpx solid rgb(204, 202, 202);
+  border-bottom: 1rpx solid rgb(204, 202, 202);
+  height: 900rpx;
+  /* background-color: rgb(250, 250, 250); */
+}
+
+.goods_card {
+  text-align: center;
+  display: block;
+  
+  box-shadow: 1rpx 1rpx 20rpx 5rpx rgb(158, 158, 158);
+  margin: 100rpx auto 60rpx auto;
+  /* background-color: red; */
+  width: 500rpx;
+  height: 700rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+
+.cell_image {
+  width: 500rpx;
+  height: 500rpx;
+  margin: 0rpx;
+  /* border: 1px solid black; *//* border-radius: 60rpx; */
+}
+
+.goods_title {
+  display: block;
+  margin:0 auto ;
+  font-size: 44rpx;
+  overflow: hidden;
+  width: 480rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10rpx 0 0 0 ;
+}
+
+.goods_price_wrap {
+  margin: 10rpx 0 0 0 ;
+  color: rgb(255, 78, 55);
+}
+
+.goods_likeamount {
+  color: rgb(175, 175, 175);
+  font-size: 24rpx;
+}
+
+.timearea {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  /* margin: 0 auto; */
+  color: rgb(175, 175, 175);
+}

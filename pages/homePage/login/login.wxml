@@ -1,0 +1,52 @@
+<!--pages/communicatePage/communicatePage.wxml-->
+<view class="logo_wrap" animation="{{mainwrap}}">
+  <image src="../../../images/LOGOJPg.jpg" animation="{{logo}}"></image>
+  <view class="logo_text" animation="{{logotext }}" ><text>超级校园交易</text> </view>
+</view>
+<view class="container">
+  <view  animation="{{mainwrap}}">
+    <view class="main">
+      <form bindsubmit="login" bindreset="reset">
+        <view class='input'>
+          <picker bindchange="bindPickerChange" value="0" range="{{schoolArray}}" mode="selector" name="uschool">
+            <view class="picker">
+              {{schoolArray[school]}}
+            </view>
+          </picker>
+        </view>
+        <view class='input'>
+          <input type='text' name="uact" placeholder='学号' placeholder-class="placeholder"> </input>
+        </view>
+        <view class='input'>
+          <input type='text' name="upwd" placeholder="密码" placeholder-class="placeholder" type='password'> </input>
+        </view>
+
+        <!-- <view id='username' class='input' class='{{login_none}}'>
+          <input type='text' bindinput='getUserName' placeholder='请创建昵称'> </input>
+        </view>
+        <view class='input' class='{{login_none}}'>
+          <input type='text' placeholder='请输入不知道什么东西'> </input>
+        </view> -->
+        <button form-type="submit">登录</button>
+        <view class="touristmodel" bindtap="touristModel">游客模式</view>
+        <text wx:if="{{loginError}}">账号或密码有误，请重新输入！</text>
+        <!-- <view class='loginsignupButton'   bindtap='submit' >{{submitButtonText}}</view> -->
+
+      </form>
+      <!-- <text bindtap="forgetPassword" class="forgetchangepassword">忘记密码/修改密码</text>  -->
+
+    </view>
+  </view>
+</view>
+
+<view class="firstlogin" wx:if="{{ifnew}}">
+
+  <!-- ifnew -->
+  <text>欢迎你，超级校园交易的</text>
+  <text>第{{datanew}}位新同学</text>
+  <text>建议使用微信头像/昵称一键登录</text>
+  <view class="button_wrap">
+    <button class="button1" open-type="getUserInfo" bindgetuserinfo="getUserInfo">确认</button>
+    <button class="button2" bindtap="nowxinfo">取消</button>
+  </view>
+</view>

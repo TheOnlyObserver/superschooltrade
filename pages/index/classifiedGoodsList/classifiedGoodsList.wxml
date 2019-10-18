@@ -1,0 +1,43 @@
+<!-- 分类筛选 -->
+<view class="selector_wrap">
+  <view class="selector1">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        分类 {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}} ▼
+      </view>
+    </picker>
+  </view>
+  <!-- 排序方式 -->
+  <view class="selector2">
+    <picker bindchange="bindPickerChange" value="{{sortindex}}" range="{{sortarray}}">
+      <view class="picker">
+        排序 {{sortarray[sortindex]}} ▼
+      </view>
+    </picker>
+  </view>
+</view>
+
+
+<view class="goods_list_wrap">
+  <view class="goods_list" wx:for="{{goodslist}}">
+    <navigator url="../goodsDetail/goodsDetail?goodsid={{goodslist[index].id}}&sellerid={{goodslist[index].userid}}">
+
+      <image mode="aspectFill" class="goods_image" src="{{goodslist[index].indeximg}}"></image>
+      <!-- <text>地址：{{goodslist[index].intro[0]}}</text> -->
+      <view class="goods_detail">
+        <text class="goods_title">{{goodslist[index].title}}</text>
+        <view class="goods_price">
+          <span style="font-size:20rpx;">¥</span>
+          <span>{{goodslist[index].price}}</span>
+        </view>
+        <text class="likeamount">点赞:{{goodslist[index].likes}}  收藏:{{goodslist[index].save}}  浏览:{{goodslist[index].view}}</text>
+      </view>
+    </navigator>
+
+  </view>
+
+</view>
+
+<!-- 游客模式 -->
+
+<view wx:if="{{touristmodel}}" catchtap="outTouristModel" style=" width: 200rpx;height: 80rpx; position:fixed;bottom:20rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>

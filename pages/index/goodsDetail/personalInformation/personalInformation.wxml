@@ -1,0 +1,84 @@
+<!-- <view>
+头像√
+昵称√
+性别（可以通过头像框颜色表示性别）√
+个人签名√
+关注数（和粉丝数一个意思）√
+上架商品（可以在页面下方弄一个列表表示上架商品）
+买到数
+卖出数
+</view> -->
+<view class="background_wrap">
+  <image class="background" style='' src='{{sellerinfo.img}}' mode="aspectFill"></image>
+</view>
+
+<view class="fans">
+  <text>{{fansamount}}粉丝</text>
+
+</view>
+<view class="top">
+  <image src='{{sellerinfo.img}}' class=".head_img {{sellerinfo.gender == 1?'head_img1':sellerinfo.gender==2?'head_img2':'' }}"  mode="aspectFill" ></image>
+<!-- style="border:2rpx solid ;" -->
+  <!-- sellerinfo.gender==2?rgba(255, 68, 11,0.8): -->
+  <view class="persionalinfo_wrap">
+
+    <view class='nickname'>{{sellerinfo.nick}}</view>
+
+    <view class=''>大连工业大学</view>
+
+    <!-- <view class='head_view_time'>刚刚来过</view> -->
+
+  </view>
+  <view class="persionalsign">
+    <text>{{sellerinfo.sign!=0?sellerinfo.sign:'个人签名：这个人很懒，什么也没写，没写，没写...'}}</text>
+  </view>
+</view>
+
+<view class="goodscards_wrap">
+  <view class='toptab'>
+    <text>Ta的商品</text>
+  </view>
+
+  <view class='goodscards' wx:for="{{goodslistarr.length}}">
+    <navigator url="../goodsDetail?goodsid={{goodslistarr[index].id}}&sellerid={{goodslistarr[index].userid}}">
+      <image class="image" mode="aspectFill" src="{{goodslistarr[index].indeximg}}" />
+      <view class="goodsinfo_wrap">
+
+        <view class="title">{{goodslistarr[index].title}}</view>
+        <view class="price">
+          <span style="font-size:24rpx;">¥</span>
+          <span>{{goodslistarr[index].price}}</span>
+          <span> {{ifnew[index]}}</span>
+        </view>
+
+      </view>
+    </navigator>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+<view class='add_btn'>
+  <button bindtap="ifFocus" class='btn1' hover-class='bg_color'>
+    {{ififocus == 0 ?'关注':'已关注'}}
+  </button>
+  <button bindtap="chatWith" class='btn2' hover-class='bg_color'>
+    私信
+  </button>
+</view>
+
+
+<!-- 游客模式 -->
+<view wx:if="{{touristmodel}}" bindtap="touristModel" style="position:fixed;top:0;width:750rpx;height:2000rpx;z-index:999;">
+  <view catchtap="outTouristModel"style=" width: 200rpx;height: 80rpx; position:fixed;bottom:20rpx;left:275rpx;  border-radius: 40rpx;  font-size: 25rpx;  color: #aaa;  line-height: 80rpx;background-color:#eee;text-align:center;">退出游客模式</view>
+</view>
